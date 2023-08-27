@@ -17,8 +17,8 @@ String estadoVentilacion;
 String estadoRiego;
 String estadoIntruso;
 
-const char* ssid = "MOV_1516";    
-const char* password = "eros1314";    
+const char* ssid = "*******";    
+const char* password = "******";    
 const char* host = "script.google.com";
 const int httpsPort = 443;
 
