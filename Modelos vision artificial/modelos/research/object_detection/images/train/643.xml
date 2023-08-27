@@ -1,0 +1,26 @@
+<annotation>
+	<folder>all</folder>
+	<filename>643.jpg</filename>
+	<path>C:\invernadero1\modelos\research\object_detection\images\all\643.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>720</width>
+		<height>1280</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>tomateVerde</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>184</xmin>
+			<ymin>477</ymin>
+			<xmax>443</xmax>
+			<ymax>809</ymax>
+		</bndbox>
+	</object>
+</annotation>

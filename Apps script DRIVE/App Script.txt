@@ -1,0 +1,95 @@
+function doGet(e) { 
+
+  Logger.log( JSON.stringify(e) );
+
+  var resultado = 'Ok';
+
+  if (e.parameter == 'Indefinido') {
+
+    resultado = 'No hay datos';
+
+  }
+
+  else {
+
+    var hoja_id = '1hjwGUpEZMoRRyM4R6k6_5MKBAPeuUU_Qf3uWH1v7onI';   //  ID
+
+    var hoja = SpreadsheetApp.openById(hoja_id).getActiveSheet();
+
+    var nuevaFila = hoja.getLastRow() + 1;            
+
+    var filaDatos = [];
+
+    filaDatos[0] = new Date();  
+
+    for (var parametro in e.parameter) {
+
+      Logger.log('In for loop, param=' + parametro);
+
+      var valor = stripQuotes(e.parameter[parametro]);
+
+      Logger.log(parametro + ':' + e.parameter[parametro]);
+
+      switch (parametro) {
+
+        case 'temperatura':
+         filaDatos[1] = valor; 
+          resultado = 'Written on column B';
+          break;
+          
+         case 'ambiente': 
+          filaDatos[2] = valor; 
+          resultado += ', Written on column C';
+          break;
+         
+         case 'suelo' :
+          filaDatos[3] = valor;
+          resultado += ', Written in Column D';
+          break;
+          
+         case 'CO2' :
+          filaDatos[4] = valor;
+          resultado += ', Written in Column E';
+          break;
+        
+        
+        case 'ventilacion' :
+          filaDatos[5] = valor;
+          resultado += ', Written in Column F';
+          break;
+          
+          
+         case 'agua' :
+          filaDatos[6] = valor;
+          resultado += ', Written in Column G';
+          break;       
+          
+         case 'intruso' :
+          filaDatos[7] = valor;
+          resultado += ', Written in Column H';
+          break; 
+        //default:  
+
+          resultado = "unsupported parameter";
+
+      }
+
+    }
+
+    Logger.log(JSON.stringify(filaDatos));
+
+    var nuevoRango = hoja.getRange(nuevaFila, 1, 1, filaDatos.length);
+
+    nuevoRango.setValues([filaDatos]);
+
+  }
+
+  return ContentService.createTextOutput(resultado);
+
+}
+
+function stripQuotes( valor ) {
+
+  return valor.replace(/^["']|['"]$/g, "");
+
+}

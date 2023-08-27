@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Invernadero Inteligente</string>
+    <string name="noEmparejamiento">No tiene dispositivos</string>
+</resources>

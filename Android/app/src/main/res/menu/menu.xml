@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/btnMore"
+        android:icon="@drawable/ic_baseline_more"
+        android:title="Mas"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/btnBluet"
+                android:icon="@drawable/ic_bluetooth_connected"
+                android:title="Bluetooth">
+
+            </item>
+
+            <item
+                android:id="@+id/btnWeb"
+                android:icon="@drawable/ic_cloud_download"
+                android:title="Web">
+
+            </item>
+            android:id="@+id/btnB"
+
+            <item
+                android:id="@+id/btnCamara"
+                android:icon="@drawable/ic_baseline_camera"
+                android:title="Camara web">
+
+            </item>
+
+        </menu>
+
+
+    </item>
+</menu>
